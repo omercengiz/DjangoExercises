@@ -8,8 +8,8 @@ class TextModel(models.Model):
     image = models.ImageField(upload_to='image_text')
     title = models.CharField(max_length=200)
     content = RichTextField()
-    CreatedDate = models.DateTimeField(auto_now_add=True)
-    editingDate = models.DateTimeField(auto_now=True)
+    created_date = models.DateTimeField(auto_now_add=True)
+    editing_date = models.DateTimeField(auto_now=True)
     #SEO Url
     slug = AutoSlugField(populate_from = 'title', unique=True)
     categories = models.ManyToManyField(CategoryModel, related_name='text')
