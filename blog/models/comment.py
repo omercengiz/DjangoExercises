@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from blog.models import TextModel
 
 class CommentModel(models.Model):
-    author_person = models.ForeignKey(User, on_delete=models.CASCADE, related_name='comment')
+    author_person = models.ForeignKey('account.CustomUserModel', on_delete=models.CASCADE, related_name='comment')
     text = models.ForeignKey(TextModel, on_delete=models.CASCADE, related_name='comments')
     comment = models.TextField()
     created_date = models.DateTimeField(auto_now_add=True)

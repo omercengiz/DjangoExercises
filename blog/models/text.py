@@ -13,7 +13,7 @@ class TextModel(models.Model):
     #SEO Url
     slug = AutoSlugField(populate_from = 'title', unique=True)
     categories = models.ManyToManyField(CategoryModel, related_name='text')
-    autor = models.ForeignKey(User, on_delete=models.CASCADE, related_name='texts')
+    autor = models.ForeignKey('account.CustomUserModel', on_delete=models.CASCADE, related_name='texts')
 
 
     class Meta:
