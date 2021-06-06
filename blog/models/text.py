@@ -3,13 +3,12 @@ from autoslug import AutoSlugField
 from blog.models import CategoryModel
 from django.contrib.auth.models import User
 from ckeditor.fields import RichTextField
+from blog.abstract_models import DataAbstractModel
 
-class TextModel(models.Model):
+class TextModel(DataAbstractModel):
     image = models.ImageField(upload_to='image_text')
     title = models.CharField(max_length=200)
     content = RichTextField()
-    created_date = models.DateTimeField(auto_now_add=True)
-    editing_date = models.DateTimeField(auto_now=True)
     #SEO Url
     slug = AutoSlugField(populate_from = 'title', unique=True)
     categories = models.ManyToManyField(CategoryModel, related_name='text')
