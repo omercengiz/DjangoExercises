@@ -25,7 +25,7 @@ SECRET_KEY = 'ft+-av)q7$u%%=%^rg1@or=_u%2+(2he0e=&81-uxaftr!v8@w'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'blog',
     #third-parties
     'ckeditor'
+    
 ]
 
 MIDDLEWARE = [
